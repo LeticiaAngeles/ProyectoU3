@@ -1,0 +1,206 @@
+/* Estilos generales */
+body {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #008ee0;
+    font-size: 30px;
+  }
+  
+  .logo-equipo img {
+    width: 150px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-equipo img:hover {
+    transform: scale(1.1);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #2ba4f0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: black;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #informacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: #ffffff;
+  }
+  
+  .caja-informacion {
+    width: 25%;
+    /*calc(33.333% - 20px);
+     Ajusta el ancho para permitir espacio entre elementos */
+    text-align: justify;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .caja-informacion:hover {
+    transform: translateY(-10px);
+    border: 3px solid rgba(10, 160, 247, 1);
+    border-radius: 8px;
+    box-shadow: 13px 16px 0px -3px rgba(10, 160, 247, 1);
+  }
+  
+  .caja-informacion:hover h2,
+  .elemento:hover h3,
+  .bold:hover strong {
+    color: rgba(10, 160, 247, 1);
+  }
+  
+  .imginicio {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .elemento {
+    width: calc(45% - 20px);
+    /* ;* Ajusta el ancho para permitir espacio entre elementos */
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .elemento:hover {
+    transform: translateY(-10px);
+    border: 3px solid rgba(10, 160, 247, 1);
+    border-radius: 8px;
+    box-shadow: 13px 16px 0px -3px rgba(10, 160, 247, 1);
+  }
+  
+  .elemento img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  
+  .informacion-principal {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .informacion-adicional {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  #cajas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .bajada {
+    width: 40%;
+    /* calc(30% - 20px); Ajusta el ancho para permitir espacio entre elementos */
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .bajada:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(to bottom right, #b8e4fd, #a8cffc);
+    border: none;
+    box-shadow: 13px 16px 0px -3px rgba(10, 160, 247, 1);
+  }
+  
+  .bajada img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+  
+    .caja-informacion,
+    #dato,
+    #origen-nombre,
+    .elemento,
+    .caja-container {
+      width: 100%;
+    }
+  
+    .informacion,
+    .contenido-principal,
+    #cajas {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

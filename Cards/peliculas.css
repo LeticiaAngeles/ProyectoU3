@@ -1,0 +1,67 @@
+body {
+    font-family: 'Fira Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #008ee0;
+    font-size: 30px;
+    margin: 0 auto;
+  }
+  
+  .logo-equipo img {
+    width: 150px;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-equipo img:hover {
+    transform: scale(1.1);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #2ba4f0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: black;
+  }
+  
+  #film-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .film-card {
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 300px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: beige;
+  }
+  
+  .film-image {
+    flex-wrap: wrap;
+    width: 300px;
+    height: auto;
+  }
