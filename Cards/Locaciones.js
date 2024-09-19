@@ -1,24 +1,28 @@
 $(document).ready(function() {
+    // Realizamos la petición AJAX a la API de Studio Ghibli Locations
     $.ajax({
-        url: 'https://ghibliapi.vercel.app/people',
+        url: 'https://ghibliapi.vercel.app/locations',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
-            const $cardsContainer = $('.cards');
-            data.forEach(person => {
-                const $card = $('<div></div>').addClass('card');
-                $card.html(`
-                    <h2>${person.name}</h2>
-                    <p><strong>Género:</strong> ${person.gender}</p>
-                    <p><strong>Edad:</strong> ${person.age}</p>
-                    <p><strong>Color de cabello:</strong> ${person.hair_color}</p>
-                    <p><strong>Color de ojos:</strong> ${person.eye_color}</p>
-                `);
-                $cardsContainer.append($card);
+            // Recorremos los datos y creamos las tarjetas dinámicamente
+            data.forEach(function(location) {
+                // Crear una tarjeta por cada ubicación
+                const card = `
+                <div class="card">
+                    <div class="card-body">
+                        <h2>${location.name}</h2>
+                        <p><strong>Clima:</strong> ${location.climate}</p>
+                        <p><strong>Terreno:</strong> ${location.terrain}</p>
+                        <p><strong>Superficie del agua:</strong> ${location.surface_water}%</p>
+                    </div>
+                </div>`;
+                // Añadimos la tarjeta al contenedor
+                $('#card-container').append(card);
             });
         },
         error: function(error) {
-            console.error('Error al obtener los datos:', error);
+            console.error("Error al obtener los datos:", error);
         }
     });
 });

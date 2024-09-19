@@ -1,50 +1,50 @@
-const input = document.querySelector("#searchInput");
-let filmsData = [];
+const entrada = document.querySelector("#searchInput"); 
+let datosPeliculas = [];
 
 window.addEventListener("DOMContentLoaded", () => {
-    console.log("loaded"); 
+    console.log("cargado");
 
     $.ajax({
         type: "GET",
         url: "https://ghibliapi.vercel.app/films",
-        dataType: "json", // Corregido a "dataType" para el formato correcto
+        dataType: "json",
         async: true,
-        success: function(data){
-            filmsData = data;
-            mostrarInfo(filmsData); 
+        success: function(datos) {
+            datosPeliculas = datos;
+            mostrarInfo(datosPeliculas);
         }
     });
 });
 
 // Filtro de búsqueda cuando se ingresa texto en el input
-input.addEventListener("input", (e) => {
-    const searchText = e.target.value.toLowerCase();
-    const filteredFilms = filmsData.filter(film => 
-        film.title.toLowerCase().includes(searchText)
+entrada.addEventListener("input", (e) => {
+    const textoBusqueda = e.target.value.toLowerCase();
+    const peliculasFiltradas = datosPeliculas.filter(pelicula =>
+        pelicula.title.toLowerCase().includes(textoBusqueda)
     );
     $("#film-container").empty(); // Vaciar las tarjetas anteriores
-    mostrarInfo(filteredFilms);   // Mostrar las nuevas tarjetas filtradas
+    mostrarInfo(peliculasFiltradas); // Mostrar las nuevas tarjetas filtradas
 });
 
 // Función para mostrar la información de las películas
-function mostrarInfo(data) {
-    const filmContainer = $("#film-container"); // Referencia al contenedor
+function mostrarInfo(datos) {
+    const contenedorPeliculas = $("#film-container"); // Referencia al contenedor
 
-    data.forEach(film => {
+    datos.forEach(pelicula => {
         // Crear la tarjeta de la película
-        let filmCard = $("<div></div>").addClass("film-card");
+        let tarjetaPelicula = $("<div></div>").addClass("film-card");
 
         // Añadir la imagen, título y título original a la tarjeta
-        $("<img>").attr("src", film.image).addClass("film-image").appendTo(filmCard);
-        $("<h3></h3>").text(film.title).appendTo(filmCard);
-        $("<p></p>").text(film.original_title).appendTo(filmCard);
+        $("<img>").attr("src", pelicula.image).addClass("film-image").appendTo(tarjetaPelicula);
+        $("<h3></h3>").text(pelicula.title).appendTo(tarjetaPelicula);
+        $("<p></p>").text(pelicula.original_title).appendTo(tarjetaPelicula);
 
         // Hacer la tarjeta clicable para redirigir a la página de detalles
-        filmCard.click(function() {
-            window.location.href = `detalle.html?id=${film.id}`;
+        tarjetaPelicula.click(function() {
+            window.location.href = `detalle.html?id=${pelicula.id}`;
         });
 
         // Añadir la tarjeta de película al contenedor
-        filmContainer.append(filmCard);
+        contenedorPeliculas.append(tarjetaPelicula);
     });
 }

@@ -24,7 +24,7 @@ function mostrarSlider(datos) {
         // Hacer la tarjeta clicable
         tarjetaPelicula.click(function() {
             // Redirigir a una nueva página con la ID de la película
-            window.location.href = `detalle.html?id=${pelicula.id}`;
+            window.location.href = `detalle2.html?id=${pelicula.id}`;
         });
 
         $(".slider").append(tarjetaPelicula);
@@ -35,21 +35,9 @@ function mostrarSlider(datos) {
 
         $('.slider').slick({
             slidesToShow: 3,
-            slidesToScroll: 1,
+            slidesToScroll: 1, 
             autoplay: true,
             autoplaySpeed: 1500,
           });
-                          
-        // $('.slider').slick({
-        //     dots: true,                     // Muestra puntos de navegación
-        //     infinite: true,                 // Hacer el slider infinito
-        //     speed: 800,                     // Velocidad de transición en milisegundos
-        //     slidesToShow: 1,                // Muestra 1 slide a la vez
-        //     slidesToScroll: 1,              // Desplaza 1 slide a la vez
-        //     arrows: true,                   // Muestra flechas de navegación
-        //     fade: true,                     // Activa el efecto de desvanecimiento
-        //     autoplay: true,                // Habilita el cambio automático de slides
-        //     autoplaySpeed: 2000           // Intervalo entre cambios automáticos (en milisegundos)
-        // });
     });
 }

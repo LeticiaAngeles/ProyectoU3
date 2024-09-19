@@ -32,7 +32,7 @@ header {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Dispone los elementos en una fila */
+  display: flex; /*Dispone los elementos en una fila */
   gap: 20px; /* Espacio entre tarjetas */
 }
 
@@ -50,7 +50,9 @@ header {
   display: block;
   text-align: center;
 }
-
+#btn-data p {
+  text-align: center;
+}
 #btn-data li img {
   width: 100%;
   height: 200px; /* Ajusta la altura según prefieras */
