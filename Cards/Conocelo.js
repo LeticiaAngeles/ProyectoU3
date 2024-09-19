@@ -11,7 +11,7 @@ $(document).ready(function() {
 });
 
 function mostrarSlider(datos) {
-    // Limitar a solo 5 películas
+    // Limitar a solo 10 películas
     const datosLimitados = datos.slice(0,10);
     
     datosLimitados.forEach(pelicula => {

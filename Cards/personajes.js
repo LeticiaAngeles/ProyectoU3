@@ -1,14 +1,12 @@
 $(document).ready(function() {
     let peopleData = [];
-
-    // Cargamos el archivo JSON externo con $.ajax
     $.ajax({
-        url: 'personajes.json', // Asegúrate de que esta URL sea correcta
+        url: 'personajes.json', 
         method: 'GET',
         dataType: 'json',
         success: function(data) {
             if (data && data.people) {
-                peopleData = data.people; // Asegúrate de que el JSON tenga una clave 'people'
+                peopleData = data.people; 
                 renderCharacters(peopleData);
             } else {
                 console.error('Formato de datos inesperado en JSON');
@@ -29,23 +27,26 @@ $(document).ready(function() {
     // Función para generar las tarjetas de personajes
     function renderCharacters(people) {
         const $characterCards = $('#character-cards');
+        $characterCards.empty(); // Limpiamos el contenedor antes de renderizar
 
         // Iteramos sobre cada personaje y creamos una tarjeta para cada uno
-        $.each(people, function(index, person) {
-            const cardHtml = `
-                <div class="card">
-                    <img src="${person.img}" alt="${person.name}">
-                    <h3>${person.name}</h3>
-                    <p><strong>Gender:</strong> ${person.gender}</p>
-                    <p><strong>Age:</strong> ${person.age}</p>
-                    <p><strong>Eye Color:</strong> ${person.eye_color}</p>
-                    <p><strong>Hair Color:</strong> ${person.hair_color}</p>
-                    <p><strong>Species:</strong> ${person.specie}</p>
-                </div>
-            `;
+        people.forEach(person => {
+            let cardContainer = $("<div></div>").addClass("card");
+            $("<img>").attr("src", person.img).attr("alt", person.name).appendTo(cardContainer);
+            $("<h3></h3>").text(person.name).appendTo(cardContainer);
+            $("<p></p>").html(`<strong>Gender:</strong> ${person.gender}`).appendTo(cardContainer);
+            $("<p></p>").html(`<strong>Age:</strong> ${person.age}`).appendTo(cardContainer);
+            $("<p></p>").html(`<strong>Eye Color:</strong> ${person.eye_color}`).appendTo(cardContainer);
+            $("<p></p>").html(`<strong>Hair Color:</strong> ${person.hair_color}`).appendTo(cardContainer);
+            $("<p></p>").html(`<strong>Species:</strong> ${person.specie}`).appendTo(cardContainer);
+
+            // Redirigir a detalle.html con el id del personaje
+            cardContainer.click(function() {
+                window.location.href = `detalle.html?id=${person.id}`;
+            });
 
             // Agregamos la tarjeta al contenedor
-            $characterCards.append(cardHtml);
+            $characterCards.append(cardContainer);
         });
     }
 });
