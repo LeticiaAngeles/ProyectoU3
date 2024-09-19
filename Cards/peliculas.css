@@ -1,4 +1,5 @@
 body {
+  
     font-family: 'Fira Sans', sans-serif;
     margin: 0;
     padding: 0;
@@ -65,3 +66,46 @@ body {
     width: 300px;
     height: auto;
   }
+
+  #searchInput {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #666;
+}
+
+#searchInput {
+  padding: 10px 10px 10px 30px; /* Añadir espacio para el ícono */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Estilos del contenedor de las películas */
+#film-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

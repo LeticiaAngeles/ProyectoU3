@@ -130,3 +130,36 @@ h1 {
     font-size: 14px;
     line-height: 1.6;
 }
+/*MISS*/
+.caja {
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+/* Estilo para la parte de la imagen */
+.imagen-lateral img {
+    width: 250px; 
+    height: auto; 
+    border-radius: 10px; 
+    object-fit: cover; 
+    margin: 40px;
+}
+
+/* Estilo para la parte del texto */
+.miss-cinthia {
+    flex: 1; /* El texto ocupa todo el espacio disponible */
+}
+
+.miss-cinthia h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.miss-cinthia p {
+    font-size: 16px;
+    line-height: 1.5;
+}

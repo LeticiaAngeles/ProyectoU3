@@ -1,13 +1,26 @@
+
 /* Estilos generales */
 body {
-    font-family: 'Fira Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Fira Sans', sans-serif;
+  padding: 90px 20px 0;
+  background-color: #f0f0f0;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   }
   
+  .navegador {
+    font-family:'Fira Sans';
+    background-color: #ffffff;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
   header {
     display: flex;
     justify-content: space-between;
@@ -19,7 +32,137 @@ body {
     font-size: 30px;
   }
   
-  .logo-equipo img {
+  .nav {
+    display: flex;
+    justify-content:space-between;
+    max-width: 992px;
+    margin: 0 auto;
+  }
+
+  .img1{
+    width: 125px;
+    padding-top: 15px;
+    transition: transform 0.3s ease;
+  }
+  .img1:hover{
+    transform: scale(1.1);
+  }
+  .a{
+    position:initial;
+    width: 100%; 
+    height: 0; 
+    padding-top: 37.0153%;
+    padding-bottom: 0; 
+    box-shadow: 0 2px 8px 0 rgba(166, 196, 255, 0.603); 
+    margin-top: 1.6em; 
+    margin-bottom: 0.9em; 
+    overflow: hidden;
+    border-radius: 8px; 
+    will-change: transform;
+  }
+  .name{
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #008ee0;
+    text-decoration: none;
+  }
+    
+  .logo {
+      font-size: 28px;
+      font-weight: bold;
+      padding: 0;
+      line-height: 80px;
+  }
+    
+  .barra-navegacion {
+    font-size: 25px;
+    align-items: end;
+    display: flex;
+    margin-right: 30px;
+    list-style: none;
+    padding-top: 15px;
+  }
+    
+  .item{
+    font-family: "Homemade Apple", cursive;
+    margin: 0 10px;
+    line-height: 80px;
+    width: max-content;
+  }
+    
+  .link {
+      padding: 8px 12px;
+      border-radius: 50px;
+  }
+    
+  .link:hover, .contacto{
+    color: #000000;
+    transition: 0.9s;
+  }
+    
+  .boton {
+      color: #2a67ad;
+      background: none;
+      border: none;
+      font-size: 30px;
+      padding: 0 20px;
+      line-height: 60px;
+      cursor: pointer; 
+      display: none;
+  }
+  
+/*   
+  @media (max-width: 768px) {
+      body {
+        padding-top: 70px;
+      }
+    
+      .navegador{
+        height: 100px;
+      } */
+    
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+      } 
+    
+      .barra-navegacion{
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #ffffff;
+        position:fixed;
+        top: 100px;
+        width: 100%;
+        padding: 20px 0;
+    
+        height: calc(100% - 60px);
+        overflow-y: auto;
+    
+        left: 100%;
+        transition: left 0.3s;
+      }
+    
+      .item {
+        line-height: 70px;
+      }
+    
+      .boton   {
+        display: block;
+        color: #00c3ff;
+      }
+    
+      .responsibe {
+        left: 0;
+      }
+    
+      .boton:focus:not(:focus-visible) {
+        outline: none;
+        color: #000000;
+      }
+  
+ .logo-equipo img {
     width: 150px;
     transition: transform 0.3s ease;
   }
@@ -187,7 +330,7 @@ body {
   }
   
   /* Responsividad */
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
   
     .caja-informacion,
     #dato,
@@ -203,4 +346,4 @@ body {
       flex-direction: column;
       align-items: center;
     }
-  }
+  } */
