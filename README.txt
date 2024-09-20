@@ -6,7 +6,7 @@ Integrantes:
 Liliana Paredes Mendivil
 Leticia Angeles Roncal
 Damaris Castillo Córdova
-Jhadira
+Jhadira Lavado Cárdenas
 Violeta
 
 Objetivos:
