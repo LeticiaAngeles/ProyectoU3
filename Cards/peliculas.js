@@ -33,6 +33,7 @@ function mostrarInfo(datos) {
     datos.forEach(pelicula => {
         
         let tarjetaPelicula = $("<div></div>").addClass("film-card");
+        
         $("<img>").attr("src", pelicula.image).addClass("film-image").appendTo(tarjetaPelicula);
         $("<h3></h3>").text(pelicula.title).appendTo(tarjetaPelicula);
         $("<p></p>").text(pelicula.original_title).appendTo(tarjetaPelicula);
